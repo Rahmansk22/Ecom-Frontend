@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #f4f6fa;
+  --color-primary-100: #e9edf5;
+  --color-primary-200: #c7d2e7;
+  --color-primary-300: #a5b8d9;
+  --color-primary-400: #6283bd;
+  --color-primary-500: #1e4ea1;
+  --color-primary-600: #1b4691;
+  --color-primary-700: #173b7a;
+  --color-primary-800: #122e5f;
+  --color-primary-900: #0f264e;
+
+  --color-amazon-navy: #131921;
+  --color-amazon-dark: #232f3e;
+  --color-amazon-yellow: #f3a847;
+  --color-amazon-orange: #ff9900;
+
+  --color-flipkart-blue: #2874f0;
+  --color-flipkart-yellow: #ffe500;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Micro-animations and premium glassmorphism classes */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark-glass {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.transition-all-300 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hide scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Toast progress bar shrink animation */
+@keyframes shrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.animate-shrink {
+  animation: shrink linear forwards;
+}
+
+/* Animation for dropdown slide down and fade in */
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
