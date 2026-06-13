@@ -5,7 +5,7 @@ import { ProductCard } from './ProductCard';
 import { 
   Sparkles, Clock, Flame, ShieldCheck, Truck, RotateCcw, 
   ChevronLeft, ChevronRight, ArrowRight,
-  Smartphone, Laptop, Tv, Shirt, ShoppingBag, Baby, Sofa, Trophy, ShoppingBasket, Plane, Grid
+  Smartphone, Laptop, Tv, Shirt, ShoppingBag, Baby, Sofa, Trophy, ShoppingBasket, Plane
 } from 'lucide-react';
 
 interface Slide {

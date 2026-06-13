@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchProductDetail } from './api';
-import { ShoppingCart, Heart, Shield, CheckCircle, ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
+import { ShoppingCart, Heart, Shield, CheckCircle, ArrowLeft } from 'lucide-react';
 import type { ProductVariantDto } from '../../types/catalog';
-import type { AppDispatch, RootState } from '../../store';
+import type { AppDispatch } from '../../store';
 import { addToCart, clearCart, fetchCart } from '../../store/slices/cartSlice';
 import { addToWishlist } from '../../store/slices/wishlistSlice';
 import { ProductReviews } from './ProductReviews';
@@ -37,7 +37,6 @@ export const ProductDetail: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const { showCartToast, showWishlistToast } = useToast();
-  const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const { data: product, isLoading, error } = useQuery({
     queryKey: ['product', slug],

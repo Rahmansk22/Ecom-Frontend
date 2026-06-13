@@ -3,36 +3,6 @@ import { Star, MessageSquare, AlertCircle, Sparkles, Check } from 'lucide-react'
 import API from '../../config/api';
 import { useDialog } from '../../components/Dialog';
 
-const getInitials = (name: string) => {
-  if (!name) return '?';
-  const parts = name.trim().split(/\s+/);
-  if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
-  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
-};
-
-const getAvatarBg = (name: string) => {
-  const colors = [
-    'bg-indigo-50 text-indigo-700 dark:bg-indigo-950/30 dark:text-indigo-300 border-indigo-100 dark:border-indigo-900/50',
-    'bg-purple-50 text-purple-700 dark:bg-purple-950/30 dark:text-purple-300 border-purple-100 dark:border-purple-900/50',
-    'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300 border-emerald-100 dark:border-emerald-900/50',
-    'bg-sky-50 text-sky-700 dark:bg-sky-950/30 dark:text-sky-300 border-sky-100 dark:border-sky-900/50',
-    'bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-300 border-amber-100 dark:border-amber-900/50',
-  ];
-  let sum = 0;
-  for (let i = 0; i < name.length; i++) {
-    sum += name.charCodeAt(i);
-  }
-  // Safe color array fallback
-  const safeColors = [
-    'bg-indigo-50 text-indigo-700 dark:bg-indigo-950/30 dark:text-indigo-300 border-indigo-100 dark:border-indigo-900/50',
-    'bg-purple-50 text-purple-700 dark:bg-purple-950/30 dark:text-purple-300 border-purple-100 dark:border-purple-900/50',
-    'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-300 border-emerald-100 dark:border-emerald-900/50',
-    'bg-sky-50 text-sky-700 dark:bg-sky-950/30 dark:text-sky-300 border-sky-100 dark:border-sky-900/50',
-    'bg-amber-50 text-amber-700 dark:bg-amber-950/30 dark:text-amber-300 border-amber-100 dark:border-amber-900/50',
-  ];
-  return safeColors[sum % safeColors.length];
-};
-
 interface ReviewItem {
   id: string;
   rating: number;

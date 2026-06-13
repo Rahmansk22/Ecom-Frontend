@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { CreditCard, Truck, ShieldCheck, MapPin, Plus, Check, Lock, QrCode, X, ArrowLeft } from 'lucide-react';
+import { CreditCard, Truck, ShieldCheck, MapPin, Plus, Check, Lock, QrCode, X, ArrowLeft, ShoppingCart } from 'lucide-react';
 import type { RootState, AppDispatch } from '../../store';
 import { checkoutOrder } from '../../store/slices/orderSlice';
 import { clearCart } from '../../store/slices/cartSlice';

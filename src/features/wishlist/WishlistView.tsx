@@ -49,6 +49,7 @@ export const WishlistView: React.FC = () => {
             itemDetails: {
               variantId: cheapest.id,
               productTitle: product.title,
+              productSlug: productSlug,
               sku: cheapest.sku,
               price: cheapest.price,
               imageUrl: cheapest.imageUrls?.[0] || null,
